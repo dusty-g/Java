@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create Pet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <form action="/Pets/Dogs" method="post" style="display: inline-block">
+        <fieldset>
+          <legend>Dog</legend>
+          <p>Name <input type="text" name="name"></p>
+          <p>Breed <input type="text" name="breed" value=""></p>
+          <p>Weight (lb) <input type="number" name="weight" value=""></p>
+          <button type="submit">submit</button>
+        </fieldset>
+    </form>
+    <form action="/Pets/Cats" method="post" style="display: inline-block">
+        <fieldset>
+          <legend>Cat</legend>
+          <p>Name <input type="text" name="name"></p>
+          <p>Breed <input type="text" name="breed" value=""></p>
+          <p>Weight (lb) <input type="number" name="weight" value=""></p>
+          <button type="submit">submit</button>
+        </fieldset>
+    </form>
+  </body>
+</html>
