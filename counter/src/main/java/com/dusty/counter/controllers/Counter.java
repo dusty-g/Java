@@ -23,4 +23,9 @@ public class Counter {
     public String counter(HttpSession session){
         return "/WEB-INF/counter.jsp";
     }
+    @RequestMapping("/reset")
+    public String reset(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
+    }
 }
