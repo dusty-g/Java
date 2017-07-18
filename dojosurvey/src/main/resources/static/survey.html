@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+</head>
+<body>
+<form method="post" action="/result">
+    <div class="row">
+        <div class="six columns">
+            <label for="name">Your Name</label>
+            <input class="u-full-width" type="text" name="name" id="name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="six columns">
+            <label for="location">Location</label>
+            <select class="u-full-width" name="location" id="location">
+                <option value="Seattle">Seattle</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six columns">
+            <label for="language">Favorite Language</label>
+            <select class="u-full-width" name="language" id="language">
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Swift">Swift</option>
+                <option value="Java">Java</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six columns">
+        <label for="exampleMessage">Comment</label>
+        <textarea class="u-full-width" placeholder="🕺" name="comment" id="exampleMessage"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six columns">
+        <button>Submit</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
