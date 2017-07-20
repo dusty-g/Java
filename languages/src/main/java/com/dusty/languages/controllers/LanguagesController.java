@@ -24,11 +24,12 @@ public class LanguagesController {
     public LanguagesController(LanguageService languageService){
         this.languageService = languageService;
     }
+
     @RequestMapping("/languages")
     public String home(@ModelAttribute("language") Language language, Model model){
-        List<Language> languages = languageService.allLanguages();
+        Iterable<Language> languages = languageService.allLanguages();
         model.addAttribute("languages", languages);
-        return "WEB-INF/views/languages.jsp";
+        return "/WEB-INF/views/languages.jsp";
     }
     @PostMapping("/languages")
     public String newLanguage(@Valid @ModelAttribute("language") Language language, BindingResult result){
@@ -40,12 +41,12 @@ public class LanguagesController {
         }
     }
     @RequestMapping("/languages/delete/{id}")
-    public String deleteLanguage(@PathVariable("id") int id){
+    public String deleteLanguage(@PathVariable("id") Long id){
         languageService.deleteLanguage(id);
         return "redirect:/languages";
     }
     @RequestMapping("/languages/edit/{id}")
-    public String editLanguage(@PathVariable("id") int id, Model model){
+    public String editLanguage(@PathVariable("id") Long id, Model model){
         Language language = languageService.getLanguageByID(id);
         model.addAttribute("language", language);
         model.addAttribute("id", id);
@@ -56,12 +57,12 @@ public class LanguagesController {
         if(result.hasErrors()){
             return "/WEB-INF/views/editLanguage.jsp";
         }else{
-            languageService.editLanguage(id, language);
+            languageService.editLanguage(language);
             return "redirect:/languages";
         }
     }
     @RequestMapping("/languages/{id}")
-    public String getLanguge(@PathVariable("id") int id, Model model){
+    public String getLanguge(@PathVariable("id") Long id, Model model){
         Language language = languageService.getLanguageByID(id);
         model.addAttribute("language", language);
         return "/WEB-INF/views/language.jsp";

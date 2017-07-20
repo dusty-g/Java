@@ -13,10 +13,10 @@
     <tr><th>Name</th><th>Creator</th><th>Version</th><th>Action</th></tr>
     <c:forEach items="${languages}" var="lang" varStatus="loop">
         <tr>
-            <td><a href="/languages/${loop.index}">${lang.language_name}</a></td>
+            <td><a href="/languages/${lang.id}">${lang.language_name}</a></td>
             <td>${lang.creator}</td>
             <td>${lang.version}</td>
-            <td><a href="/languages/delete/${loop.index}">Delete</a> <a href="/languages/edit/${loop.index}">Edit</a> </td>
+            <td><a href="/languages/delete/${lang.id}">Delete</a> <a href="/languages/edit/${lang.id}">Edit</a> </td>
         </tr>
     </c:forEach>
 </table>

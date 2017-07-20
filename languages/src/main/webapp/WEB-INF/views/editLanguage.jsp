@@ -8,7 +8,8 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<form:form method="POST" action="/languages/edit/${id}" modelAttribute="language">
+<form:form method="POST" action="/languages/edit/${language.id}" modelAttribute="language">
+    <form:hidden path="id"/>
     <form:label path="language_name">Name:
         <form:errors path="language_name"/>
         <form:input path="language_name"/>
