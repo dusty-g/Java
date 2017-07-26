@@ -2,6 +2,7 @@ package com.dusty.logandreg.models;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -92,7 +93,7 @@ public class User {
     @Size(min = 0)
     private String lastName;
 
-    @Size(min = 0)
+    @Email
     private String username;
 
 

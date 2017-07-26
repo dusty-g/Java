@@ -4,4 +4,7 @@
 <p>Last Name: ${currentUser.lastName}</p>
 <p>Email: ${currentUser.username}</p>
 <p>Sign up date: ${currentUser.createdAt}</p>
-<a href="/logout">Logout</a>
+<form id="logoutForm" method="POST" action="/logout">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <input type="submit" value="Logout!" />
+</form>
